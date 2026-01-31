@@ -1,0 +1,36 @@
+# 박사논문(260130) 코드 구현 의존성
+# Python 3.10+
+
+# Data & numerics
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+yfinance>=0.2.28
+
+# ML/DL
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Mamba/SSM (선택: 순수 PyTorch SSM으로 대체 가능)
+# mamba-ssm  # CUDA 필요 시 별도 설치
+
+# Graph
+networkx>=3.0
+torch-geometric>=2.3.0
+
+# Causal / stats
+statsmodels>=0.14.0
+
+# Text embedding (FinBERT)
+transformers>=4.30.0
+sentence-transformers>=2.2.0
+
+# Config & run
+pyyaml>=6.0
+tqdm>=4.65.0
+python-dotenv>=1.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Optional: LLM 검증·뉴스 컨텍스트 (환경변수 OPENAI_API_KEY)
+openai>=1.0.0

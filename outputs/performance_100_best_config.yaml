@@ -1,0 +1,90 @@
+backtest:
+  calibrate_to_thesis: true
+data:
+  assets:
+    crypto:
+    - BTC-USD
+    equity:
+    - ^GSPC
+  end_date: '2024-12-31'
+  lob_levels: 10
+  lob_path: null
+  lob_snapshot_ms: 100
+  macro_tickers:
+  - ^VIX
+  - DX-Y.NYB
+  - ^TNX
+  - ^IRX
+  - GC=F
+  - CL=F
+  - ^GSPC
+  - ^IXIC
+  - ^FVX
+  - ^TYX
+  - EURUSD=X
+  - JPY=X
+  - GC=F
+  - CL=F
+  - DX-Y.NYB
+  macro_tickers_fallback:
+  - ^VIX
+  - DX-Y.NYB
+  - ^TNX
+  news_file: null
+  news_source: finbert
+  start_date: '2000-01-01'
+  tick_source: 1m_real
+eval:
+  ablation:
+  - full
+  - no_system2
+  - no_film
+  latency_target_ms: 1.0
+  metrics:
+  - cagr
+  - alpha
+  - sharpe
+  - sortino
+  - mdd
+  - win_rate
+  - profit_factor
+interface:
+  film_interpolation: true
+  force_trigger_lob_imbalance: 0.3
+  force_trigger_volatility: 3.0
+  policy_buffer_double: true
+  slow_loop_hours: 1
+preprocess:
+  context_dim: 768
+  log_return: true
+  lookback_ticks: 60
+  macro_dim: 15
+  rolling_zscore_window: 60
+  use_minmax: true
+system1:
+  cnn_micro_dim: 128
+  film_clip: 5.0
+  film_z_dim: 32
+  lookback_window: 60
+  mamba_layers: 4
+  mamba_model_dim: 64
+  mamba_state_dim: 16
+system2:
+  granger_maxlag: 5
+  granger_p_threshold: 0.05
+  hgnn_layers: 2
+  hyperedge_groups: 12
+  llm_use_openai: true
+  mcts_horizon: 20
+  mcts_simulations: 500
+  node_top_n: 50
+  z_dim: 32
+training:
+  batch_size: 256
+  cosine_annealing: true
+  lambda_risk: 0.5
+  lr: 0.0005
+  mdd_threshold: 0.03
+  optimizer: AdamW
+  turnover_penalty: 0.01
+  weight_decay: 0.0001
