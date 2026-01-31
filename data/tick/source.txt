@@ -1,1 +1,1 @@
-1m_real
+interpolated_from_ohlc
