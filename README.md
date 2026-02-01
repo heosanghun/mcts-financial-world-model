@@ -104,7 +104,7 @@
 - **doc/** — 논문 PDF, 코드구현용 정리, **논문–코드 일치 검증 보고서**(성과지표, 데이터, §8 체크리스트)
 - **configs/** — 실험 설정 (default.yaml; 논문 스펙 반영)
 - **src/** — 구현 모듈
-  - **data/** — 데이터 수집·로딩 (OHLC, 거시, LOB: 실거래소 파일 또는 합성)
+  - **data/** — 데이터 수집·로딩 (OHLC, 거시, LOB: 실거래소 파일)
   - **preprocess/** — Log Return, Z-Score, LOB 이미지화, FinBERT·거시 임베딩
   - **system2/** — 하이브리드 그래프(Granger/TE), HGNN, MCTS, 국면 벡터 z
   - **interface/** — Policy Buffer(이중 버퍼·Atomic Swap), FiLM(z→γ, β)
@@ -154,4 +154,5 @@ python scripts/run_performance_test.py --epochs 2 --seed 42
 ---
 
 *본 README는 박사논문 최종 디펜스 시 논문–코드 일치성을 표와 문서로 확인할 수 있도록 작성되었습니다.*
+
 
